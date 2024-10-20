@@ -122,6 +122,68 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &623507187
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 626.1641
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1462.8575
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.01273
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954852668667628196, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086938717342654407, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+      propertyPath: m_Name
+      value: Audio
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+--- !u!82 &623507188 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1399765171441416639, guid: 2ba03587d08dbf948b576cd42fde3090, type: 3}
+  m_PrefabInstance: {fileID: 623507187}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1479064208
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +335,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2045230407}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1686034537}
         m_TargetAssemblyTypeName: Instructions, Assembly-CSharp
         m_MethodName: MainMenu
@@ -585,6 +659,7 @@ GameObject:
   - component: {fileID: 2045230406}
   - component: {fileID: 2045230405}
   - component: {fileID: 2045230404}
+  - component: {fileID: 2045230407}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -666,6 +741,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2045230407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045230403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a97e6b7f54953d43a3aef030ff02b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClick: {fileID: 623507188}
 --- !u!1 &2045978811
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,3 +970,4 @@ SceneRoots:
   - {fileID: 2045230406}
   - {fileID: 1686034536}
   - {fileID: 1479064211}
+  - {fileID: 623507187}
