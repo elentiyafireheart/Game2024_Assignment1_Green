@@ -11,6 +11,8 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private Boundary _horizontalBoundary;
     [SerializeField] private Boundary _verticalBoundary;
     [SerializeField] private bool _isTestMobile;
+    public GameObject _bulletPrefab;
+    public Transform StarPoint;
 
     Camera _camera;
     Vector2 _destination;
@@ -110,10 +112,6 @@ public class PlayerBehaviour : MonoBehaviour
            collision.GetComponent<EnemyBehaviour>().DyingSequence();
            StartCoroutine(collision.GetComponent<EnemyBehaviour>().DyingRoutine());
 
-           if (collision.gameObject.TryGetComponent<Health>(out var health))
-           {
-               health.Damage(10);
-           }
         }
     }
 }
