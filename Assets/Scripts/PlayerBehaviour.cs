@@ -109,6 +109,11 @@ public class PlayerBehaviour : MonoBehaviour
            // collision.gameObject.SetActive(false);
            collision.GetComponent<EnemyBehaviour>().DyingSequence();
            StartCoroutine(collision.GetComponent<EnemyBehaviour>().DyingRoutine());
+
+           if (collision.gameObject.TryGetComponent<Health>(out var health))
+           {
+               health.Damage(10);
+           }
         }
     }
 }
