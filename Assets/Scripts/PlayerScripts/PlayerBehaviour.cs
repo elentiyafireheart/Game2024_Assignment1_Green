@@ -102,16 +102,16 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("EnemyTag"))
-        {
-            _scoreScript.ChangeScore(100);
-            //Destroy(collision.gameObject);
-           // collision.gameObject.SetActive(false);
-           collision.GetComponent<EnemyBehaviour>().DyingSequence();
-           StartCoroutine(collision.GetComponent<EnemyBehaviour>().DyingRoutine());
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("EnemyTag"))
+    //    {
+    //        _scoreScript.ChangeScore(100);
+    //        //Destroy(collision.gameObject);
+    //        // collision.gameObject.SetActive(false);
+    //        collision.GetComponent<EnemyBehaviour>().DyingSequence();
+    //        StartCoroutine(collision.GetComponent<EnemyBehaviour>().DyingRoutine());
 
-        }
-    }
+    //    }
+    //}
 }
