@@ -8,11 +8,13 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public float Speed;
     ScoreScript _scoreScript;
+    public AudioClip collisionSound;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _scoreScript = FindObjectOfType<ScoreScript>();
+        GetComponent<AudioSource>().clip = collisionSound;
     }
 
     void Update()
@@ -24,6 +26,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("EnemyTag"))
         {
+            GetComponent<AudioSource>().Play();
             _scoreScript.ChangeScore(100);
             //Destroy(collision.gameObject);
             // collision.gameObject.SetActive(false);

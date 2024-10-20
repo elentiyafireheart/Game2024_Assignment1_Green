@@ -73,8 +73,8 @@ public class EnemyBehaviour : MonoBehaviour
         _spriteRenderer.enabled = true;
         GetComponent<Collider2D>().enabled = true;
         transform.position = new Vector2(Random.Range(_horizontalBoundary.min, _horizontalBoundary.max), _verticalBoundary.max);
-        transform.localScale = new Vector3(1.0f + Random.Range(-0.3f, 0.3f),
-            1.0f + Random.Range(-0.3f, 0.3f), 1.0f + Random.Range(-0.3f, 0.3f));
+        //transform.localScale = new Vector3(1.0f + Random.Range(-0.3f, 0.3f),
+        //    1.0f + Random.Range(-0.3f, 0.3f), 1.0f + Random.Range(-0.3f, 0.3f));
         _verticalSpeed = Random.Range(_verticalSpeedRange.min, _verticalSpeedRange.max);
         _horizontalSpeed = Random.Range(_horizontalSpeedRange.min, _horizontalSpeedRange.max);
     }
