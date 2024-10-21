@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreScript : MonoBehaviour
 {
@@ -30,5 +31,10 @@ public class ScoreScript : MonoBehaviour
     void UpdateScore()
     {
         _scoreText.text = "POINTS: " + _score;
+
+        if (_score == 500)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

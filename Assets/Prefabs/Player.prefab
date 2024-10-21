@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 6036265170608851691}
   - component: {fileID: 6453038172512503073}
   - component: {fileID: 4764245296391067856}
-  - component: {fileID: 2777106434873825195}
   - component: {fileID: 4927803655686355114}
+  - component: {fileID: 2777106434873825195}
   m_Layer: 0
   m_Name: Player
   m_TagString: PlayerTag
@@ -134,11 +134,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 2
   _horizontalBoundary:
-    min: -3
-    max: 3
+    min: 3
+    max: -3
   _verticalBoundary:
-    min: -4.6
-    max: 4.5
+    min: 4.6
+    max: -4.5
   _isTestMobile: 1
   _bulletPrefab: {fileID: 526808361527369828, guid: 593ad1600eb04444a8648962545ecbd7, type: 3}
   StarPoint: {fileID: 6051494051355052706}
@@ -155,33 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
---- !u!50 &2777106434873825195
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7135631818987748846}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &4927803655686355114
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -217,3 +190,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.19
+--- !u!50 &2777106434873825195
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135631818987748846}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
