@@ -15,6 +15,10 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private Boundary _verticalBoundary;
     [SerializeField] private Boundary _horizontalBoundary;
 
+    public GameObject _enemyBullet;
+    public Transform _bulletSpawn;
+    private float timer;
+
     SpriteRenderer _spriteRenderer;
 
     private Color[] _colors =
@@ -41,6 +45,13 @@ public class EnemyBehaviour : MonoBehaviour
         if (transform.position.y < _verticalBoundary.min)
         {
             Reset();
+        }
+
+        timer += Time.deltaTime;
+        if (timer > 1)
+        {
+            timer = 0;
+            Shoot();
         }
 
         //// checks if player is off the screen from the side
@@ -77,6 +88,11 @@ public class EnemyBehaviour : MonoBehaviour
         //    1.0f + Random.Range(-0.3f, 0.3f), 1.0f + Random.Range(-0.3f, 0.3f));
         _verticalSpeed = Random.Range(_verticalSpeedRange.min, _verticalSpeedRange.max);
         _horizontalSpeed = Random.Range(_horizontalSpeedRange.min, _horizontalSpeedRange.max);
+    }
+
+    void Shoot()
+    {
+        Instantiate(_enemyBullet, _bulletSpawn.position, transform.rotation);
     }
 
 }
