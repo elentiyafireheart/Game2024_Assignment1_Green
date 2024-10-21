@@ -22,7 +22,6 @@ public class HealthCollectable : MonoBehaviour
         if (collision.tag == "PlayerTag")
         {
             collision.GetComponent<Health>().AddHealth(healthValue);
-            gameObject.SetActive(false);
         }
     }
 
