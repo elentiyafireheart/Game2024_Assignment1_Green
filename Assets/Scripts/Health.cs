@@ -3,56 +3,37 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-
-    [SerializeField] private int _maxHp = 100;
-    private int _hp;
-
-    public int Hp
-    {
-        get => _hp;
-        private set
-        {
-            var isDamage = value < _hp;
-            _hp = Mathf.Clamp(value,0, _maxHp);
-            if (isDamage)
-            {
-                Damaged?.Invoke(_hp);
-            }
-            else
-            {
-                Healed?.Invoke(_hp);
-            }
-
-            if (_hp <= 0)
-            {
-                Died?.Invoke();
-            }
-        }
-    }
-
-    public UnityEvent<int> Healed;
-    public UnityEvent<int> Damaged;
-    public UnityEvent Died;
-
-    public int MaxHp => _hp;
+    [SerializeField] private float startingHealth;
+    public float currentHealth { get; private set; }
+    private Animator anim;
 
     private void Awake()
     {
-        _hp = _maxHp;
+        currentHealth = startingHealth;
+        anim = GetComponent<Animator>();
     }
 
-    public void Damage(int amount) => Hp -= amount;
+    public void TakeDamage(float damage)
+    {
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
 
-    public void Heal(int amount) => Hp += amount;
+        if (currentHealth > 0)
+        {
+            //player hurt
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
 
-    public void HealFull() => Hp = _maxHp;
-    
+    public void AddHealth(float value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + value, 0, startingHealth);
+    }
 
-    public void Kill() => Hp = 0;
-    
-
-    public void Adjust(int value) => Hp += value;
 }

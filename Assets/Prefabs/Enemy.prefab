@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1022837465949260792}
   - component: {fileID: 7012598143844330720}
   m_Layer: 0
-  m_Name: EnemyGreen
+  m_Name: Enemy
   m_TagString: EnemyTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,6 +145,7 @@ MonoBehaviour:
   _horizontalBoundary:
     min: -2.15
     max: 2.15
+  _explosionAnimation: {fileID: 0}
   _enemyBullet: {fileID: 526808361527369828, guid: acfe78fc3186df944849becad13dfb23, type: 3}
   _bulletSpawn: {fileID: 847183089257538488}
 --- !u!58 &1022837465949260792

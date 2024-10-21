@@ -154,16 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2babca6509a63245bf25ad4fb878725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 20
-  Healed:
-    m_PersistentCalls:
-      m_Calls: []
-  Damaged:
-    m_PersistentCalls:
-      m_Calls: []
-  Died:
-    m_PersistentCalls:
-      m_Calls: []
+  startingHealth: 3
 --- !u!60 &4747746021408266335
 PolygonCollider2D:
   m_ObjectHideFlags: 0

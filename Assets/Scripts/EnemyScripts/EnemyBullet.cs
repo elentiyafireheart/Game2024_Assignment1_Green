@@ -10,6 +10,8 @@ public class EnemyBullet : MonoBehaviour
     ScoreScript _scoreScript;
     public AudioClip collisionSound;
 
+    [SerializeField] private float damage;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -26,8 +28,8 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.CompareTag("PlayerTag"))
         {
+            collision.GetComponent<Health>().TakeDamage(damage);
             GetComponent<AudioSource>().Play();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
